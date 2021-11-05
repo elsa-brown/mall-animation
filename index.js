@@ -16,7 +16,7 @@ const fillPath = () => {
        }
    }
  
-   if (count >= 2000) {
+   if (count >= 200) {
        idxA++;
        const currPathA = paths[idxA];
       
