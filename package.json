@@ -1,0 +1,23 @@
+{
+  "name": "mall-animation",
+  "version": "1.0.0",
+  "description": "svg animation",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsa-brown/mall-animation.git"
+  },
+  "author": "elsa brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elsa-brown/mall-animation/issues"
+  },
+  "homepage": "https://github.com/elsa-brown/mall-animation#readme",
+  "dependencies": {
+    "http-server": "^14.0.0"
+  }
+}
