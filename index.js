@@ -1,12 +1,14 @@
 const paths = document.querySelectorAll('path');
 const svg = document.querySelector('svg');
+const pathLength = 14072;
 
-let idxA = -1;
+let idxA = 0;
 let idxB = paths.length + 1;
 let count = 0;
 let offset = 0;
+let filterBlur = 0;
+let reverseBlur = false;
 
- 
 const fillPath = () => {
   count++;
 
@@ -31,14 +33,24 @@ const fillPath = () => {
       currPathA.setAttribute('style', `fill:#000`);
     }
 
-    if (count > 4000 && count <= 4080 || 
-      count > 5000 && count < 5170 || 
-      count > 6000) {
-      offset--;
-      svg.setAttribute('style', `outline-offset: ${offset}px`);
+    if (offset > -520) {
+      if (count > 4000 && count <= 4080 ||  
+        count > 5600 && count < 5650 ||
+        count > 6000) {
+        offset--;
+        svg.setAttribute('style', `outline-offset: ${offset}px`);
+      }
+    } else if (filterBlur < 12 && !reverseBlur) {
+      filterBlur += 0.10;
+      svg.setAttribute('style', `filter: blur(${filterBlur}px); outline-offset: ${offset}px`);
+    } else if (filterBlur >= 12 && !reverseBlur) {
+      reverseBlur = true;
+    } else if (filterBlur > 0 && reverseBlur) {
+      filterBlur -= 0.10;
+      svg.setAttribute('style', `filter: blur(${filterBlur}px); outline-offset: ${offset}px`);
     }
   }
- 
+
   window.requestAnimationFrame(fillPath);
 };
  
