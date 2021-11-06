@@ -1,6 +1,6 @@
 const paths = document.querySelectorAll('path');
 const svg = document.querySelector('svg');
-const pathLength = 14072;
+// const pathLength = 14072;
 
 let idxA = -1;
 let idxB = paths.length + 5;
@@ -58,6 +58,10 @@ const fillPath = () => {
   } else if (filterBlur > 0 && reverseBlur) {
     filterBlur -= 0.10;
     svg.setAttribute('style', `filter: blur(${filterBlur}px); outline-offset: ${offset}px`);
+  }
+
+  if (filterBlur >= 14 && reverseBlur) {
+    idxA = 13950;
   }
 
   window.requestAnimationFrame(fillPath);
