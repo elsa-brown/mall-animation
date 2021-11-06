@@ -19,6 +19,9 @@ svg {
     0% {
         outline: 2px solid rgba(0, 0, 0, 0);
     }
+    20% {
+        outline: 4px solid rgba(0, 0, 0, 0);
+    }
     95% {
         outline: 2px solid rgba(255, 0, 0, 0.5);
     }
