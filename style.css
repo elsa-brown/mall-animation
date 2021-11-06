@@ -9,20 +9,20 @@ body {
 }
 
 svg {
-    outline: 2px solid rgba(255, 0, 0, 1);
+    outline: 4px solid rgba(255, 0, 0, 1);
     background-color: black;
     max-height: 90%;
-    animation: outlineFadeIn 120s;
+    animation: outlineFadeIn 100s;
 }
 
 @keyframes outlineFadeIn {
     0% {
         outline: 2px solid rgba(0, 0, 0, 0);
     }
-    80% {
+    95% {
         outline: 2px solid rgba(255, 0, 0, 0.5);
     }
     100% {
-        outline: 2px solid rgba(255, 0, 0, 1);
+        outline: 4px solid rgba(255, 0, 0, 1);
     }
 }
