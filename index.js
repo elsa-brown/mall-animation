@@ -34,16 +34,21 @@ const fillPath = () => {
     }
 
     if (offset > -520) {
-      if (count > 4000 && count <= 4080 ||  
+      if (count > 1760 && count < 1820) {
+        offset += 0.25;
+        svg.setAttribute('style', `outline-offset: ${offset}px`);
+      }
+      if (count > 1900 && count < 1940 ||
+        count > 4000 && count <= 4080 ||  
         count > 5600 && count < 5650 ||
         count > 6000) {
         offset--;
         svg.setAttribute('style', `outline-offset: ${offset}px`);
       }
-    } else if (filterBlur < 12 && !reverseBlur) {
+    } else if (filterBlur < 14 && !reverseBlur) {
       filterBlur += 0.10;
       svg.setAttribute('style', `filter: blur(${filterBlur}px); outline-offset: ${offset}px`);
-    } else if (filterBlur >= 12 && !reverseBlur) {
+    } else if (filterBlur >= 14 && !reverseBlur) {
       reverseBlur = true;
     } else if (filterBlur > 0 && reverseBlur) {
       filterBlur -= 0.10;
