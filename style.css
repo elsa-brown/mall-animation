@@ -26,3 +26,11 @@ svg {
         outline: 4px solid rgba(255, 0, 0, 1);
     }
 }
+
+.hide {
+    display: none;
+}
+
+path.black {
+    fill: #000 !important;
+}

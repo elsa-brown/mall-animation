@@ -1,16 +1,31 @@
-const paths = document.querySelectorAll('path');
-const svg = document.querySelector('svg');
+import mallSvg from './mall.js';
+
+const enterButton = document.getElementById('enter');
+let paths;
+// const svg = document.querySelector('svg');
+let svg;
+
+const audioMall = document.getElementById('mall');
+const audioFountain = document.getElementById('fountain');
+const audioTakeoff = document.getElementById('takeoff');
 // const pathLength = 14072;
 
-let idxA = -1;
-let idxB = paths.length + 5;
-let count = 0;
-let offset = 0;
-let filterBlur = 0;
-let reverseBlur = false;
+// let idxA = -1;
+// let idxB = paths.length + 5;
+// let count = 0;
+// let offset = 0;
+// let filterBlur = 0;
+// let reverseBlur = false;
 
 const fillPath = () => {
   count++;
+
+  if (count === 1) {
+    console.log('count: ', count, audioMall);
+    document.body.click();
+    audioMall.play();
+    audioFountain.play();
+  }
 
   idxB--;
   const currPathB = paths[idxB];
@@ -66,5 +81,22 @@ const fillPath = () => {
 
   window.requestAnimationFrame(fillPath);
 };
- 
-  window.requestAnimationFrame(fillPath);
+
+enterButton.addEventListener('click', () => {
+  console.log("CLIKCED")
+  enterButton.classList.add('hide');
+  document.body.insertAdjacentHTML('beforeEnd', mallSvg);
+  svg = document.querySelector('svg');
+
+  paths = [...document.querySelectorAll('path')];
+  paths.forEach(path => path.classList.add('black'));
+
+  const lastIdx = paths.length;
+  // setTimeout(() => { 
+  //   for (let i = lastIdx; i--; i > -1) {
+  //     const path = paths[i];
+  //     path.classList.remove('black');
+  //   }
+  // }, 5000);
+  // window.requestAnimationFrame(fillPath);
+});
