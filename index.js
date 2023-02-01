@@ -1,6 +1,5 @@
 const paths = document.querySelectorAll('path');
 const svg = document.querySelector('svg');
-// const pathLength = 14072;
 
 let idxA = -1;
 let idxB = paths.length + 5;
