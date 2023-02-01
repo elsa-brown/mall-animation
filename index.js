@@ -67,4 +67,4 @@ const fillPath = () => {
   window.requestAnimationFrame(fillPath);
 };
  
-  window.requestAnimationFrame(fillPath);
+window.requestAnimationFrame(fillPath);
